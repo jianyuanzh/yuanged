@@ -10,6 +10,7 @@
     <version>${yuanged.version}</version>
     <modules>
         <module>quickscala</module>
+        <module>spk-data-algorithms</module>
     </modules>
 
     <properties>
