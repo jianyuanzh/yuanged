@@ -56,6 +56,31 @@ class TestLeftJoin {
     joined.collect().foreach(println)
   }
 
+  @Test
+  def testSpkRddLeftJoin(): Unit = {
+    val spark = getSpark()
+    val resourceDir = System.getProperty("user.dir") + "/src/test/resources"
+
+    val users = spark.textFile(s"$resourceDir/users.txt")
+      .map(l => l.split(" "))
+      .map(arr => arr(0) ->  arr(1))
+
+    val transactions = spark.textFile(s"$resourceDir/transactions.txt")
+      .filter(_.nonEmpty)
+      .map(l => l.split(" "))
+      .map(arr => (arr(2), arr(1)))
+
+    users.leftOuterJoin(transactions)
+      .map(m => (m._2._2.getOrElse(""), m._2._1))
+      .filter(m => m._1.nonEmpty)
+      .groupByKey()
+      .collect()
+      .foreach(println)
+
+
+  }
+
+
   def getSpark(): SparkContext = {
     val sparkConf = new SparkConf()
       .setAppName("Test LeftJoin")
