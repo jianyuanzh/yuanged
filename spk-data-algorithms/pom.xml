@@ -11,5 +11,11 @@
 
     <artifactId>spk-data-algorithms</artifactId>
 
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.spark</groupId>
+            <artifactId>spark-core_${scala.major.version}</artifactId>
+        </dependency>
+    </dependencies>
 
 </project>
