@@ -86,7 +86,7 @@ class TestLeftJoin {
       .setAppName("Test LeftJoin")
       .setMaster("local[4]")
 
-    new SparkContext(sparkConf)
+    SparkContext.getOrCreate(sparkConf)
   }
 
 }
