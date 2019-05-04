@@ -4,7 +4,7 @@ import java.text.SimpleDateFormat
 import java.util.Date
 
 import org.apache.commons.lang3.StringUtils
-import org.apache.spark.{HashPartitioner, SparkConf, SparkContext}
+import org.apache.spark.{SparkConf, SparkContext}
 import org.junit.Test
 
 class TestMovingAverage {
