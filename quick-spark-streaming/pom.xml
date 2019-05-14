@@ -9,16 +9,17 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>spk-data-algorithms</artifactId>
+    <artifactId>quick-spark-streaming</artifactId>
 
     <dependencies>
         <dependency>
             <groupId>org.apache.spark</groupId>
             <artifactId>spark-core_${scala.major.version}</artifactId>
         </dependency>
+        <!--spark streaming-->
         <dependency>
             <groupId>org.apache.spark</groupId>
-            <artifactId>spark-mllib_${scala.major.version}</artifactId>
+            <artifactId>spark-streaming_${scala.major.version}</artifactId>
         </dependency>
     </dependencies>
 
