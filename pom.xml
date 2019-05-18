@@ -12,6 +12,7 @@
         <module>quickscala</module>
         <module>spk-data-algorithms</module>
         <module>quick-spark-streaming</module>
+        <module>common</module>
     </modules>
 
     <properties>
